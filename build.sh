@@ -10,14 +10,14 @@ samples=( admob analytics app-indexing auth config crash database dynamiclinks i
 OPTS='-Dorg.gradle.jvmargs="-Xmx2048m -XX:+HeapDumpOnOutOfMemoryError"'
 
 android list sdk -a
-android update sdk -a -u -t 3
+android update sdk -a -u -t 3 -y
 
 # Work off travis
 if [[ -v TRAVIS_PULL_REQUEST ]]; then
   echo "TRAVIS_PULL_REQUEST: $TRAVIS_PULL_REQUEST"
 else
   echo "TRAVIS_PULL_REQUEST: unset, setting to false"
-  TRAVIS_PULL_REQUEST=false
+  TRAVIS_PULL_REQUEST=1
 fi
 
 for sample in "${samples[@]}"

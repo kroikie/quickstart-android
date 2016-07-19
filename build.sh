@@ -9,10 +9,6 @@ samples=( admob analytics app-indexing auth config crash database dynamiclinks i
 # Limit memory usage
 OPTS='-Dorg.gradle.jvmargs="-Xmx2048m -XX:+HeapDumpOnOutOfMemoryError"'
 
-android list sdk -a
-android update sdk -a -u -t 3
-y
-
 # Work off travis
 if [[ -v TRAVIS_PULL_REQUEST ]]; then
   echo "TRAVIS_PULL_REQUEST: $TRAVIS_PULL_REQUEST"
